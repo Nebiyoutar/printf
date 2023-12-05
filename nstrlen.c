@@ -7,7 +7,7 @@
 size_t _nstrlen(const char *str)
 {
 size_t len = 0;
-while (*tr != '\n')
+while (*str != '\n')
 {
 len++;
 str++;
