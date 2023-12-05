@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
  * _nstrlen - function that return string length
  * @str: the string array
