@@ -35,6 +35,8 @@ write(1, "%", 1);
 count++;
 break;
 default:
+write(2, "Error: uncompatible format specifier\n", 37);
+return (-1);
 break;
 }
 }
