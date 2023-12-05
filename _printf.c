@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 int count = 0;
 va_list arg_lists;
 va_start(arg_lists, format);
-while (*format)
+while (*format != '\0')
 {
 if (*format == '%')
 {
@@ -26,8 +26,11 @@ break;
 case 's':
 {
 const char *str = va_arg(arg_lists, const char*);
+while (*str != '\0')
+{
 write(1, str, _nstrlen(str));
 count += _nstrlen(str);
+}
 break;
 }
 case '%':
