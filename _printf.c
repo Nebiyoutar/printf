@@ -9,6 +9,8 @@ int _printf(const char *format, ...)
 int count = 0;
 va_list arg_lists;
 va_start(arg_lists, format);
+if (format == NULL)
+return (-1);
 while (*format != '\0')
 {
 if (*format == '%')
