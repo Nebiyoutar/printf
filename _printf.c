@@ -29,6 +29,7 @@ count += write_percent();
 break;
 default:
 write(2, "Error: uncompatible format specifier\n", 37);
+return (-1);
 break;
 }
 }
