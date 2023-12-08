@@ -6,11 +6,9 @@
  */
 int _printf(const char *format, ...)
 {
+va_list lists;
+va_start(lists, format);
 int count = 0;
-va_list arg_lists;
-va_start(arg_lists, format);
-if (format == NULL)
-return (-1);
 while (*format != '\0')
 {
 if (*format == '%')
@@ -19,37 +17,25 @@ format++;
 switch (*format)
 {
 case 'c':
-{
-char c = (char) va_arg(arg_lists, int);
-write(1, &c, 1);
-count++;
+count += write_char((char)va_arg(lists, int));
 break;
-}
 case 's':
-{
-const char *str = va_arg(arg_lists, const char*);
-write(1, str, _nstrlen(str));
-count += _nstrlen(str);
-
+count += write_string(va_arg(lists, char*));
 break;
-}
 case '%':
-write(1, "%", 1);
-count++;
+count += write_percent();
 break;
 default:
 write(2, "Error: uncompatible format specifier\n", 37);
-return (-1);
 break;
 }
 }
 else
 {
-write(1, format, 1);
-count++;
+count += write_char(*format);
 }
 format++;
 }
-va_end(arg_lists);
+va_end(lists);
 return (count);
 }
