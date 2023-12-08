@@ -27,6 +27,10 @@ break;
 case '%':
 count += write_percent();
 break;
+case 'd':
+case 'i':
+count += write_int_dec(va_arg(lists, int));
+break;
 default:
 write(2, "Error: uncompatible format specifier\n", 37);
 return (-1);
