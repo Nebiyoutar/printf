@@ -6,9 +6,9 @@
  */
 int _printf(const char *format, ...)
 {
+int count = 0;
 va_list lists;
 va_start(lists, format);
-int count = 0;
 if (format == NULL)
 return (-1);
 while (*format != '\0')
