@@ -1,8 +1,8 @@
-#include <unistd.h>
+#include "main.h"
 /**
  * write_char - print character
  * @c: the character that is going to be printed
- * Return: return char 
+ * Return: return char
  */
 int write_char(char c)
 {
