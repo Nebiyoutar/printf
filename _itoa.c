@@ -16,7 +16,7 @@ n = -n;
 }
 if (n == 0)
 {
-buffer[i++] == '0';
+buffer[i++] = '0';
 }
 while (n != 0)
 {

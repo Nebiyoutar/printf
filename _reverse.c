@@ -15,7 +15,7 @@ char temp = str[start];
 str[start] = str[end];
 str[end] = temp;
 start++;
-end--
+end--;
 }
 }
 
